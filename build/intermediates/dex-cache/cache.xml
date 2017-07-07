@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/ykim/naver_image/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1ab104da4b1c5bf1579c91967085e40d74f43f10">
+        <dex dex="/Users/ykim/naver_image/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c7bbd0068554ffc71da74b9a2c481a101b81b966/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ykim/.android/build-cache/14f5a25c37a8975cb3ddf019b10bde751ae92e55/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="183fcbfcca75b095b63125f5e31ebd8b5f5f3216">
+        <dex dex="/Users/ykim/naver_image/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a872d6e6288128119694461fbcb2d419accca92f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ykim/naver_image/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/ykim/naver_image/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7f47a2a1612fc7ad8064d176d901ba94cfca239b/classes.dex" />
+    </item>
+
+</items>
