@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), MainMvp.View {
                 {
                     list, position ->
                     startActivity(DetailActivity.createIntent(this, list as ArrayList<NaverImage>, position))
-
+                    println("position : $position")
                 }
 
         )

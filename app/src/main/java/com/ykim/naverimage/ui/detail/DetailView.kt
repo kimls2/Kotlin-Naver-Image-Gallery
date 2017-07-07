@@ -29,6 +29,7 @@ class DetailView(context: Context, private val naverImage: NaverImage) : LinearL
         naverImage.link.let {
             GlideApp.with(this)
                     .load(it)
+                    .fitCenter()
                     .into(photo_view)
         }
     }

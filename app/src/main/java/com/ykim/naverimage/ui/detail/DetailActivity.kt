@@ -14,22 +14,19 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-//        val imageUrl: String? = intent.extras.getString(EXTRA_NIMAGE)
-//        imageUrl?.let {
-//            GlideApp.with(this)
-//                    .load(it)
-//                    .into(photo_view)
-//        }
-
         val adapter = DetailAdapter()
         adapter.naverImages.clear()
         intent.getParcelableArrayListExtra<NaverImage>(EXTRA_NIMAGE).let {
             adapter.naverImages.addAll(it)
         }
+
         detailViewPager.adapter = adapter
         intent.extras.getInt(EXTRA_POSITION).let {
             detailViewPager.currentItem = it
+            println("intent.extras.getInt(EXTRA_POSITION) : " + intent.extras.getInt(EXTRA_POSITION))
         }
+
+
     }
 
     companion object {
@@ -39,6 +36,7 @@ class DetailActivity : AppCompatActivity() {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putParcelableArrayListExtra(EXTRA_NIMAGE, imageList)
             intent.putExtra(EXTRA_POSITION, position)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             return intent
         }
 
