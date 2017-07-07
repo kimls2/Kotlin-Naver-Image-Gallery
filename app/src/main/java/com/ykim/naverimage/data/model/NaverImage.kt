@@ -8,15 +8,11 @@ import android.os.Parcelable
  */
 
 data class NaverImage(
-
         val title: String,
-
         val link: String,
+        val thumbnail: String)
+    : Parcelable {
 
-        val thumbnail: String
-
-
-) : Parcelable {
     companion object {
         @JvmField val CREATOR: Parcelable.Creator<NaverImage> = object : Parcelable.Creator<NaverImage> {
             override fun createFromParcel(source: Parcel): NaverImage = NaverImage(source)

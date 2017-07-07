@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton class DataManager @Inject constructor(private val naverService: NaverService) {
 
     fun getImage(query: String, start: Int): Observable<MutableList<NaverImage>> {
-        return naverService.getImage(query, start, 20, ImageSizeFilter.large.name)
+        return naverService.getImage(query, start, 20, ImageSizeFilter.all.name)
                 .filter({ CollectionUtils.isNotEmpty(it.items) })
                 .map { it.items }
     }

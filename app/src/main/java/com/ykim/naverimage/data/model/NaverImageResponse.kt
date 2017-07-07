@@ -7,12 +7,8 @@ package com.ykim.naverimage.data.model
 data class NaverImageResponse(
 
         val lastBuildDate: String,
-
         val total: Int,
-
         val start: Int,
-
         val display: Int,
-
         val items: MutableList<NaverImage>
 )
