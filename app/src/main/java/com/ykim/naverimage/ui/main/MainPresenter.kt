@@ -21,12 +21,13 @@ class MainPresenter
                 .subscribeBy(
                         onNext = {
                             view.showImage(it)
-                        }
-                        , onComplete = {
-                    view.showLoading(false)
-                }, onError = {
-                    view.showError(it.message)
-                })
+                        },
+                        onComplete = {
+                            view.showLoading(false)
+                        },
+                        onError = {
+                            view.showError(it.message)
+                        })
 
         )
     }

@@ -8,7 +8,7 @@ import com.ykim.naverimage.ui.base.BaseViewHolder
 /**
  * Created by ykim on 2017. 7. 7..
  */
-class ImageAdapter(private val onImageSelectedListener: ((naverImage: MutableList<NaverImage>, position: Int) -> Unit))
+class ImageAdapter(private val onImageSelectedListener: ((imageList: MutableList<NaverImage>, position: Int) -> Unit))
     : BaseListAdapter<NaverImage>() {
     override fun getListItemView(context: Context): BaseViewHolder<NaverImage> {
         return ImageViewHolder(context)
