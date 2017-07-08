@@ -23,20 +23,20 @@ class MainActivity : AppCompatActivity(), MainMvp.View {
     lateinit var mainComponent: MainComponent
     @Inject lateinit var presenter: MainPresenter
 
+    private val imageAdapter: ImageAdapter
+
     private var pastVisibleItems = 0
     private var visibleItemCount = 0
     private var totalItemCount = 0
     private var canMoreLoading = true
     private var lastSearchText = ""
     private var isLoading = false
-    private val imageAdapter: ImageAdapter
 
     init {
         imageAdapter = ImageAdapter(
                 {
                     list, position ->
                     startActivity(DetailActivity.createIntent(this, list as ArrayList<NaverImage>, position))
-                    println("position : $position")
                 }
 
         )
@@ -98,15 +98,13 @@ class MainActivity : AppCompatActivity(), MainMvp.View {
                 totalItemCount = layoutManager.itemCount
                 var firstVisibleItems: IntArray? = null
                 firstVisibleItems = layoutManager.findFirstVisibleItemPositions(firstVisibleItems)
-                if (firstVisibleItems != null && firstVisibleItems.size > 0) {
+                if (firstVisibleItems != null && firstVisibleItems.isNotEmpty()) {
                     pastVisibleItems = firstVisibleItems[0]
                 }
 
                 if (canMoreLoading && !isLoading) {
-                    println("on scroll")
                     if (visibleItemCount + pastVisibleItems >= totalItemCount) {
                         isLoading = true
-                        println("LOAD next")
                         nextPage()
                     }
                 }
@@ -122,9 +120,8 @@ class MainActivity : AppCompatActivity(), MainMvp.View {
 
     private fun hideKeyboard(focusView: View?) {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        val target = focusView ?: currentFocus
-        if (target != null) {
-            imm.hideSoftInputFromWindow(target.windowToken, 0)
+        focusView ?: currentFocus.let {
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }
 }

@@ -19,7 +19,8 @@ import retrofit2.http.Query
 interface NaverService {
     @GET("image")
     fun getImage(
-            @Query("query") query: String, @Query("start") start: Int, @Query("display") display: Int, @Query("filter") filter: String): Observable<NaverImageResponse>
+            @Query("query") query: String, @Query("start") start: Int,
+            @Query("display") display: Int, @Query("filter") filter: String): Observable<NaverImageResponse>
 
     object Factory {
         @JvmStatic fun makeNaverService(): NaverService {

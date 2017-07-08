@@ -23,7 +23,6 @@ class DetailActivity : AppCompatActivity() {
         detailViewPager.adapter = adapter
         intent.extras.getInt(EXTRA_POSITION).let {
             detailViewPager.currentItem = it
-            println("intent.extras.getInt(EXTRA_POSITION) : " + intent.extras.getInt(EXTRA_POSITION))
         }
 
 

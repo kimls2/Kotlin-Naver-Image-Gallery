@@ -24,6 +24,10 @@ android {
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
     }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
@@ -34,6 +38,7 @@ dependencies {
     final RX_ANDROID = '2.0.1'
     final RX_KOTLIN = '2.0.0'
     final DAGGER_VERSION = '2.11'
+
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 

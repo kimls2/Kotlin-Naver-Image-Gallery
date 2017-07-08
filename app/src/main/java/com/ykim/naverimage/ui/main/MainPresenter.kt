@@ -12,6 +12,7 @@ import javax.inject.Inject
  */
 class MainPresenter
 @Inject constructor(val dataManager: DataManager) : BasePresenter<MainMvp.View>(), MainMvp.Presenter {
+
     override fun loadImage(searchQuery: String, start: Int) {
         view.showLoading(true)
         disposables.add(dataManager.getImage(searchQuery, start)

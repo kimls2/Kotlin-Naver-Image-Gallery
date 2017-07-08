@@ -2,6 +2,7 @@ package com.ykim.naverimage
 
 import android.app.Application
 import com.ykim.naverimage.di.AppComponent
+import com.ykim.naverimage.di.AppModule
 import com.ykim.naverimage.di.DaggerAppComponent
 
 /**
@@ -12,8 +13,7 @@ class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-//        component = DaggerAppComponent.builder().appModule().build()
-        component = DaggerAppComponent.builder().build()
+        component = DaggerAppComponent.builder().appModule(AppModule()).build()
     }
 
     override fun getSystemService(name: String?): Any {
