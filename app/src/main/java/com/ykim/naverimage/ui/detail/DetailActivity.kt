@@ -10,13 +10,12 @@ import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val adapter = DetailAdapter()
         adapter.naverImages.clear()
-        intent.getParcelableArrayListExtra<NaverImage>(EXTRA_NIMAGE).let {
+        intent.getParcelableArrayListExtra<NaverImage>(EXTRA_NIMAGE)?.let {
             adapter.naverImages.addAll(it)
         }
 
